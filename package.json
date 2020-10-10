@@ -7,13 +7,13 @@
   },
   "scripts": {
     "test": "mocha --exit",
-    "build": "tsc && npm run build:assets",
+    "build": "tsc && yarn build:assets",
     "build:assets": "cp -r src/img dist/img",
-    "dev": "concurrently --kill-others --prefix=name --names=server,tslint --prefix-colors=green,magenta \"npm run dev:server\" \"npm run dev:lint\"",
+    "dev": "concurrently --kill-others --prefix=name --names=server,tslint --prefix-colors=green,magenta \"yarn run dev:server\" \"yarn run dev:lint\"",
     "dev:server": "onchange -i -k 'src/**/*.ts' -- ts-node test/server.ts",
     "dev:lint": "onchange -i -k 'src/**/*.ts' -- tslint -t stylish 'src/**/*.ts'",
-    "prepublishOnly": "npm run build",
-    "postinstall": "npm run build"
+    "prepublishOnly": "yarn build",
+    "postinstall": "yarn build"
   },
   "author": "",
   "license": "MIT",
