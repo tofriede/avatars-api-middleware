@@ -13,7 +13,7 @@
     "dev:server": "onchange -i -k 'src/**/*.ts' -- ts-node test/server.ts",
     "dev:lint": "onchange -i -k 'src/**/*.ts' -- tslint -t stylish 'src/**/*.ts'",
     "prepublishOnly": "yarn build",
-    "postinstall": "yarn build"
+    "postinstall": "yarn build:assets"
   },
   "author": "",
   "license": "MIT",
