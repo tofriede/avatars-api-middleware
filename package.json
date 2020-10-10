@@ -12,15 +12,14 @@
     "dev": "concurrently --kill-others --prefix=name --names=server,tslint --prefix-colors=green,magenta \"yarn run dev:server\" \"yarn run dev:lint\"",
     "dev:server": "onchange -i -k 'src/**/*.ts' -- ts-node test/server.ts",
     "dev:lint": "onchange -i -k 'src/**/*.ts' -- tslint -t stylish 'src/**/*.ts'",
-    "prepublishOnly": "yarn build",
-    "postinstall": "yarn build:assets"
+    "prepublishOnly": "yarn build"
   },
   "author": "",
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
   "files": [
-    "dist"
+    "src"
   ],
   "dependencies": {
     "avatars-utils": "0.0.4",
