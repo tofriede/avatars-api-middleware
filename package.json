@@ -3,7 +3,7 @@
   "version": "0.4.2",
   "description": "",
   "engines": {
-    "node": ">= 9.4.x"
+    "node": ">= 10.24.x"
   },
   "scripts": {
     "test": "mocha --exit",
