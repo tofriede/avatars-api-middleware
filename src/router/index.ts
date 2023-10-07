@@ -1,5 +1,5 @@
 import Router, { Response } from 'express';
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 import { imageFileNames, imageFilePaths } from '../lib/imageFiles';
 import { combine, resize } from '../lib/imaging';
@@ -23,7 +23,7 @@ router.get('/list', (req, res) => {
 
 router.get('/:size?/random', (req, res) => {
   const { size } = req.params;
-  const face = FaceFactory.create(uuid.v4());
+  const face = FaceFactory.create(uuidv4());
 
   combine(face)
     .png()
@@ -31,7 +31,7 @@ router.get('/:size?/random', (req, res) => {
     .pipe(pngResponse(res));
 });
 
-router.get('/:size?/:id', (req, res, next) => {
+router.get('/:size?/:id', (req, res) => {
   const { id, size } = req.params;
   const face = FaceFactory.create(id);
 
@@ -41,7 +41,7 @@ router.get('/:size?/:id', (req, res, next) => {
     .pipe(pngResponse(res));
 });
 
-router.get('/face/:eyes/:nose/:mouth/:color/:size?', (req, res, next) => {
+router.get('/face/:eyes/:nose/:mouth/:color/:size?', (req, res) => {
   const { color, size } = req.params;
   const face = { color: `#${color}` } as Face;
 

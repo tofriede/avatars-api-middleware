@@ -8,7 +8,7 @@ class FaceFactory {
         this.colorHash = new avatars_utils_1.Hash(colors);
         this.eyeHash = new avatars_utils_1.Hash(eyes);
         this.noseHash = new avatars_utils_1.Hash(noses);
-        this.mouthHash = new avatars_utils_1.Hash(mouths, avatars_utils_1.hashFactory(avatars_utils_1.sumAndDiff));
+        this.mouthHash = new avatars_utils_1.Hash(mouths, (0, avatars_utils_1.hashFactory)(avatars_utils_1.sumAndDiff));
     }
     create(string) {
         return {

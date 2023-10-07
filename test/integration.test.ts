@@ -1,7 +1,7 @@
 import supertest from 'supertest';
 import { expect } from 'chai';
 import server from './server';
-import sharp = require('sharp');
+import sharp from 'sharp';
 
 describe('middleware', () => {
   let metaReader: sharp.Sharp;

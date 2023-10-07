@@ -1,0 +1,6 @@
+{
+    "recursive": true,
+    "require": "ts-node/register",
+    "reporter": "spec",
+    "spec": ["test/**/*.test.ts"]
+}
